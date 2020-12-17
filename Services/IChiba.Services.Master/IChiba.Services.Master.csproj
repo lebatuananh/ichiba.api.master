@@ -1,0 +1,75 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SPAddress\**" />
+    <EmbeddedResource Remove="SPAddress\**" />
+    <None Remove="SPAddress\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EasyCaching.Bus.Redis" Version="0.9.0" />
+    <PackageReference Include="EasyCaching.Core" Version="0.9.0" />
+    <PackageReference Include="EasyCaching.HybridCache" Version="0.9.0" />
+    <PackageReference Include="EasyCaching.InMemory" Version="0.9.0" />
+    <PackageReference Include="EasyCaching.Redis" Version="0.9.0" />
+    <PackageReference Include="EasyCaching.Serialization.Json" Version="0.9.0" />
+    <PackageReference Include="linq2db" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IChiba.Caching.Helpers">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Caching.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Caching.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Caching.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Caching.Manager">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Caching.Manager.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Caching.Manager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Caching.Manager.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Core">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Data">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Elasticsearch, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Elasticsearch.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.MongoDB, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Services">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Services, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Services.Master, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Services.Master.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.SharedMvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.SharedMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Web.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Web.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy &quot;$(TargetDir)*.dll&quot; &quot;$(SolutionDir)..\IChiba.SharedRefs\Assemblies\IChiba&quot; /c /e /y" />
+  </Target>
+
+</Project>

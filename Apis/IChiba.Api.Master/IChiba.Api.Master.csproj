@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.0.2" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="20.1.3" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.7.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.2.0" />
+    <PackageReference Include="IdentityModel" Version="4.5.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+    <PackageReference Include="linq2db" Version="3.1.5" />
+    <PackageReference Include="linq2db.AspNet" Version="3.1.5" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Physical" Version="3.1.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.6.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Services\IChiba.Services.Master\IChiba.Services.Master.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IChiba.Caching.Helpers">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Caching.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Caching.Manager">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Caching.Manager.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Core">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Data">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Services">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.SharedMvc">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.SharedMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="IChiba.Web.Framework">
+      <HintPath>..\..\..\ichiba.sharedrefs\Assemblies\IChiba\IChiba.Web.Framework.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>
